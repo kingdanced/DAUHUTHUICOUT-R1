@@ -39,13 +39,13 @@ body {
 
 .grid { 
     display: grid; 
-    /* Thay 1fr bằng auto để thẻ không bị tự giãn tràn màn hình */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 320px)); 
+    /* Đổi auto-fill thành auto-fit */
+    /* Đổi 1fr thành một con số cụ thể (ví dụ 300px) để ngăn thẻ giãn quá to */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 300px)); 
     gap: 25px; 
     max-width: 1200px; 
     margin: 0 auto; 
-    /* Căn giữa các cột trong grid */
-    justify-content: center; 
+    justify-content: center; /* Bây giờ dòng này mới có tác dụng */
 }
 
 .card { 
@@ -129,5 +129,6 @@ body {
   75% { transform: translateX(2px) rotate(1deg); }
   100% { transform: translateX(0); }
 }
+
 
 
