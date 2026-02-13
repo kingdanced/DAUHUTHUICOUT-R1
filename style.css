@@ -2,6 +2,7 @@
     --primary-orange: #d97706; 
     --bg-cream: #fefce8; 
     --text-brown: #92400e;
+    --accent-yellow: #fbbf24;
 }
 
 body { 
@@ -11,10 +12,9 @@ body {
 }
 
 /* Phần giới thiệu */
-/* Tìm đến class .intro-container và sửa lại dòng margin */
 .intro-container {
     max-width: 800px;
-    margin: 50px auto 40px auto; /* Thay số 0 thành 50px hoặc số lớn hơn tùy ý bạn */
+    margin: 20px auto 40px auto; /* Lề trên giảm xuống 20px cho cân đối */
     background: white;
     padding: 30px;
     border-radius: 20px;
@@ -22,6 +22,7 @@ body {
     border-left: 5px solid var(--primary-orange);
     text-align: center;
 }
+
 .intro-container h2 {
     color: var(--text-brown);
     margin-top: 0;
@@ -53,7 +54,7 @@ body {
     font-weight: bold;
 }
 
-
+/* Header & Filter Bar */
 .header { text-align: center; margin-bottom: 30px; }
 .logo { color: var(--text-brown); font-weight: 800; font-size: 2rem; text-transform: uppercase; margin: 0; }
 .sub-logo { font-size: 0.9rem; color: #78350f; }
@@ -62,203 +63,34 @@ body {
 .filter-btn { padding: 10px 25px; border-radius: 25px; border: 1.5px solid #fbbf24; background: white; cursor: pointer; font-weight: bold; color: #92400e; }
 .filter-btn.active { background: var(--primary-orange); color: white; border-color: var(--primary-orange); }
 
+/* Grid & Cards */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
-
 .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); position: relative; border: 1px solid #fef3c7; }
 .card img { width: 100%; height: 200px; object-fit: cover; }
-
 .price-tag { position: absolute; top: 15px; right: 15px; background: #fbbf24; color: #92400e; padding: 5px 15px; border-radius: 12px; font-weight: 800; }
-
 .card-info { padding: 20px; }
-.btn-add { width: 100%; margin-top: 15px; background: #fff7ed; color: var(--primary-orange); border: 1px solid #ffedd5; padding: 10px; border-radius: 10px; font-weight: bold; cursor: pointer; }
-.btn-add:hover { background: var(--primary-orange); color: white; }
 
+/* Nút đặt nhanh */
+.quick-order { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+.btn-quick { flex: 1; min-width: 80px; padding: 8px 5px; border-radius: 8px; text-decoration: none; font-size: 0.85rem; font-weight: bold; text-align: center; color: white; transition: transform 0.2s; }
+.btn-quick:active { transform: scale(0.95); }
+.btn-quick.shopee { background-color: #ee4d2d; }
+.btn-quick.grab { background-color: #00b14f; }
+.btn-quick.phone { background-color: var(--text-brown); cursor: pointer; }
+
+.opening-time-mini { font-size: 0.8rem; color: #888; margin-top: 10px; text-align: center; font-style: italic; }
+
+/* Utilities */
 .hidden { display: none; }
 
 /* Modal */
 .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
-.modal-content { background-color: white; margin: 15% auto; padding: 30px; border-radius: 20px; width: 300px; text-align: center; }
-.phone-number { font-size: 1.5rem; color: var(--primary-orange); font-weight: bold; display: block; margin: 15px 0; text-decoration: none; }
-.close-btn { background: var(--primary-orange); color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; }
+.modal-content { background-color: white; margin: 15% auto; padding: 25px; border-radius: 20px; width: 320px; text-align: center; }
+.btn-delivery { display: block; padding: 12px; border-radius: 12px; text-decoration: none; font-weight: bold; color: white; transition: transform 0.2s; }
+.phone-call { background-color: var(--text-brown); color: white; }
+.close-btn { background: var(--primary-orange); color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; margin-top: 10px; }
 
-/* Styling cho bảng link đặt hàng */
-.delivery-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 20px 0;
-}
-
-.btn-delivery {
-    display: block;
-    padding: 12px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: bold;
-    color: white;
-    transition: transform 0.2s;
-}
-
-.btn-delivery:active {
-    transform: scale(0.95);
-}
-
-
-/* Màu xanh đặc trưng của Grab */
-.grab {
-    background-color: #00b14f !important;
-    color: white !important;
-}
-
-/* Hiệu ứng hover cho chuyên nghiệp */
-.grab:hover {
-    background-color: #008f40 !important;
-}
-
-
-.bee {
-    background-color: #ffc412; /* Màu vàng Bee */
-    color: #333;
-}
-.phone-call {
-    background-color: var(--text-brown); /* Sử dụng biến màu nâu đã có */
-    color: white;
-    margin-top: 5px;
-    border: 2px solid #78350f;
-}
-
-/* Hiệu ứng rung nhẹ để gây chú ý vào nút gọi điện (tùy chọn) */
-.phone-call:hover {
-    background-color: #78350f;
-}
-/* Thêm vào cùng nhóm với .grab và .bee đã tạo trước đó */
-.shopee {
-    background-color: #ee4d2d; /* Màu cam đỏ Shopee */
-    color: white;
-}
-
-/* Chỉnh lại độ rộng Modal một chút để bảng link nhìn cân đối hơn */
-.modal-content {
-    width: 320px; 
-    padding: 25px;
-}
-
-.modal-content h2 {
-    color: var(--text-brown);
-    margin-top: 0;
-}
-.app-guide {
-    background: #fffbeb;
-    border: 1px dashed #fbbf24;
-    padding: 15px;
-    border-radius: 12px;
-    margin: 15px 0;
-    text-align: center;
-}
-
-.guide-text {
-    font-size: 0.9rem;
-    margin: 5px 0;
-    color: #555;
-}
-
-.keyword-box {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: var(--primary-orange);
-    background: white;
-    padding: 8px;
-    border-radius: 8px;
-    display: inline-block;
-    border: 1px solid #ffedd5;
-    margin-top: 5px;
-}
-
-.shopee {
-    background-color: #ee4d2d;
-    color: white;
-}
-
-.phone-call {
-    background-color: var(--text-brown);
-    color: white;
-}
-
-/* Container cho các nút đặt nhanh */
-.quick-order {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 15px;
-}
-
-/* Style chung cho nút đặt nhanh */
-.btn-quick {
-    flex: 1;
-    min-width: 80px;
-    padding: 8px 5px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    transition: transform 0.2s;
-}
-
-.btn-quick:active {
-    transform: scale(0.95);
-}
-
-/* Màu sắc riêng cho từng nút */
-.btn-quick.shopee { background-color: #ee4d2d; }
-.btn-quick.grab { background-color: #00b14f; }
-.btn-quick.phone { background-color: var(--text-brown); }
-
-/* Ẩn nút cũ nếu bạn không dùng đến nữa */
-.btn-add { display: none; }
-
-/* Thêm hiệu ứng chuột khi rê vào nút Gọi ngay */
-.btn-call-modal {
-    cursor: pointer;
-}
-
-/* Thời gian mở cửa nhỏ dưới các nút */
-.opening-time-mini {
-    font-size: 0.8rem;
-    color: #888;
-    margin-top: 10px;
-    text-align: center;
-    font-style: italic;
-}
-
-/* Phần thông tin chân trang (Footer) */
-.footer-info {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 25px;
-    background: #fff;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border-top: 4px solid var(--primary-orange);
-}
-
-.footer-info h3 {
-    color: var(--text-brown);
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-}
-
-.footer-info p {
-    margin: 8px 0;
-    color: #444;
-    font-size: 0.95rem;
-}
-
-.footer-info a {
-    color: var(--primary-orange);
-    text-decoration: none;
-    font-weight: bold;
-}
+/* Footer */
+.footer-info { max-width: 800px; margin: 40px auto; padding: 25px; background: #fff; border-radius: 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid var(--primary-orange); }
+.footer-info h3 { color: var(--text-brown); margin-bottom: 15px; font-size: 1.2rem; }
+.footer-info a { color: var(--primary-orange); text-decoration: none; font-weight: bold; }
