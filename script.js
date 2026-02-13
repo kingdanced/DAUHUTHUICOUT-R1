@@ -46,9 +46,7 @@ window.onclick = function(event) {
     if (event.target == modal) {
         hideModal();
     }
-
 }
-
 // Thêm đoạn này vào cuối file script.js
 document.addEventListener("DOMContentLoaded", () => {
     // Gọi hàm lọc mặc định cho 'dau-hu' ngay khi tải trang
