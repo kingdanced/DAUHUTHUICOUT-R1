@@ -1,51 +1,120 @@
 :root { 
     --primary-orange: #d97706; 
-    --bg-cream: #fefce8; 
+    --bg-cream: #fffdf0; 
     --text-brown: #92400e;
     --accent-yellow: #fbbf24;
+    --tet-red: #d0021b;
+    --tet-gold: #ffd700;
 }
 
 body { 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     background-color: var(--bg-cream); 
     margin: 0; padding: 20px; color: #333; 
+    overflow-x: hidden;
+}
+
+/* Trang trí Tết */
+#tet-blossoms {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 99;
+}
+
+.blossom {
+    position: absolute;
+    color: #ffd700;
+    font-size: 20px;
+    user-select: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+/* Lồng đèn */
+.lantern-container {
+    position: fixed;
+    top: -10px;
+    z-index: 100;
+    pointer-events: none;
+}
+.lantern-container.left { left: 10px; }
+.lantern-container.right { right: 10px; }
+
+.lantern {
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: sway 3s ease-in-out infinite alternate;
+    transform-origin: top center;
+}
+.lantern span {
+    font-size: 12px;
+    background: var(--tet-red);
+    color: white;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: -5px;
+}
+
+@keyframes sway {
+    0% { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
+}
+
+/* Header */
+.header { text-align: center; margin-bottom: 30px; }
+.logo { color: var(--tet-red); font-weight: 800; font-size: 2.2rem; margin: 5px 0; text-shadow: 1px 1px 0 var(--tet-gold); }
+.sub-logo { font-size: 0.95rem; color: var(--text-brown); font-style: italic; }
+.tet-badge {
+    background: var(--tet-red);
+    color: white;
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(208, 2, 27, 0.3);
 }
 
 /* Intro */
 .intro-container {
     max-width: 800px; margin: 20px auto 40px; background: white;
     padding: 30px; border-radius: 20px; text-align: center;
-    border-left: 5px solid var(--primary-orange);
-    box-shadow: 0 4px 15px rgba(146, 64, 14, 0.05);
+    border-left: 5px solid var(--tet-red);
+    border-right: 5px solid var(--tet-red);
+    box-shadow: 0 4px 15px rgba(208, 2, 27, 0.1);
 }
 
-.highlight-text { color: var(--primary-orange); font-weight: bold; }
+.highlight-text { color: var(--tet-red); font-weight: bold; }
 
-/* Header & Filter */
-.header { text-align: center; margin-bottom: 30px; }
-.logo { color: var(--text-brown); font-weight: 800; font-size: 2rem; margin: 0; }
-.sub-logo { font-size: 0.9rem; color: #78350f; }
-
+/* Filter Bar */
 .filter-bar { 
     display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; 
-    position: sticky; top: 0; background: var(--bg-cream); padding: 10px 0; z-index: 10; 
+    position: sticky; top: 0; background: rgba(255, 253, 240, 0.9); 
+    padding: 15px 0; z-index: 10; 
+    backdrop-filter: blur(5px);
 }
 .filter-btn { 
-    padding: 10px 25px; border-radius: 25px; border: 1.5px solid #fbbf24; 
-    background: white; cursor: pointer; font-weight: bold; color: #92400e; 
+    padding: 10px 25px; border-radius: 25px; border: 2px solid var(--tet-gold); 
+    background: white; cursor: pointer; font-weight: bold; color: var(--text-brown); 
     transition: 0.3s;
 }
-.filter-btn.active { background: var(--primary-orange); color: white; border-color: var(--primary-orange); }
+.filter-btn.active { background: var(--tet-red); color: white; border-color: var(--tet-red); }
 
+/* Menu Grid */
 .grid { 
     display: grid; 
-    /* Đổi auto-fill thành auto-fit */
-    /* Đổi 1fr thành một con số cụ thể (ví dụ 300px) để ngăn thẻ giãn quá to */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 300px)); 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 320px)); 
     gap: 25px; 
     max-width: 1200px; 
     margin: 0 auto; 
-    justify-content: center; /* Bây giờ dòng này mới có tác dụng */
+    justify-content: center;
 }
 
 .card { 
@@ -53,79 +122,81 @@ body {
     border-radius: 20px; 
     overflow: hidden; 
     position: relative; 
-    border: 1px solid #fef3c7; 
-    transition: all 0.3s ease; /* Hiệu ứng mượt cho cả card */
+    border: 2px solid #fef3c7; 
+    transition: all 0.3s ease;
 }
 
 .card.hidden { display: none; }
 
-/* Hiệu ứng nhấc card lên và đổ bóng khi hover */
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(146, 64, 14, 0.2);
-    border-color: var(--accent-yellow);
+    box-shadow: 0 15px 30px rgba(208, 2, 27, 0.15);
+    border-color: var(--tet-red);
 }
 
 .card img { 
     width: 100%; 
-    height: 200px; 
+    height: 220px; 
     object-fit: cover; 
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Hiệu ứng zoom mượt */
+    transition: transform 0.6s ease;
 }
 
-/* Hiệu ứng phóng to ảnh khi hover card */
 .card:hover img {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .price-tag { 
-    position: absolute; top: 15px; right: 15px; background: #fbbf24; 
-    color: #92400e; padding: 5px 15px; border-radius: 12px; font-weight: 800; 
-    z-index: 2;
+    position: absolute; top: 15px; right: 15px; background: var(--tet-red); 
+    color: var(--tet-gold); padding: 5px 15px; border-radius: 12px; font-weight: 800; 
+    z-index: 2; border: 1px solid var(--tet-gold);
 }
 
-.card-info { padding: 20px; position: relative; z-index: 2; background: white; }
+.card-info { padding: 20px; background: white; }
+.card-info h3 { margin-top: 0; color: var(--text-brown); }
 
 /* Buttons */
 .quick-order { display: flex; gap: 8px; margin-top: 15px; width: 100%; }
 
 .btn-quick { 
     flex: 1; display: flex; align-items: center; justify-content: center;
-    height: 40px; padding: 0 5px; border-radius: 8px; 
-    text-decoration: none; font-size: 0.8rem; font-weight: bold; 
+    height: 42px; border-radius: 8px; 
+    text-decoration: none; font-size: 0.85rem; font-weight: bold; 
     color: white; transition: 0.2s; box-sizing: border-box; 
+    border: none;
 }
 
 .btn-quick.shopee { background: #ee4d2d; }
 .btn-quick.grab { background: #00b14f; }
-.btn-quick.phone { background: var(--text-brown); cursor: pointer; border: none; }
+.btn-quick.phone { background: var(--tet-red); cursor: pointer; }
 
-.btn-quick:hover { opacity: 0.9; transform: scale(1.05); }
+.btn-quick:hover { opacity: 0.9; transform: scale(1.03); }
 
 /* MODAL */
 .modal { 
-    display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; 
+    display: none; position: fixed; z-index: 200; left: 0; top: 0; width: 100%; height: 100%; 
     background-color: rgba(0,0,0,0); transition: background-color 0.3s ease; 
 }
-.modal.show { display: block; background-color: rgba(0,0,0,0.6); }
+.modal.show { display: block; background-color: rgba(0,0,0,0.7); }
 
 .modal-content { 
-    background: white; margin: -50px auto; padding: 30px; border-radius: 20px; width: 90%; max-width: 320px; 
+    background: white; margin: -50px auto; padding: 30px; border-radius: 20px; width: 90%; max-width: 340px; 
     text-align: center; opacity: 0; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    border: 3px solid var(--tet-gold);
 }
 .modal.show .modal-content { margin: 15% auto; opacity: 1; }
 
-.btn-delivery { display: block; padding: 15px; border-radius: 12px; font-weight: bold; background: var(--text-brown); color: white; }
-.close-btn { background: #ccc; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; margin-top: 15px; width: 100%; }
+.btn-delivery { display: block; padding: 15px; border-radius: 12px; font-weight: bold; color: white; margin-bottom: 10px; }
+.close-btn { background: #eee; border: none; padding: 12px; border-radius: 10px; cursor: pointer; margin-top: 15px; width: 100%; font-weight: bold; }
 
 /* Footer */
 .footer-info { 
     max-width: 800px; margin: 40px auto; padding: 25px; background: white; 
-    border-radius: 20px; text-align: center; border-top: 4px solid var(--primary-orange); 
+    border-radius: 20px; text-align: center; border-top: 5px solid var(--tet-red); 
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
 }
-@keyframes wobble {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-2px) rotate(-1deg); }
-  75% { transform: translateX(2px) rotate(1deg); }
-  100% { transform: translateX(0); }
+
+@media (max-width: 600px) {
+    .logo { font-size: 1.8rem; }
+    .lantern-container { top: 0; }
+    .lantern { font-size: 30px; }
 }

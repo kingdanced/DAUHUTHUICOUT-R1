@@ -3,109 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đậu Hủ Thúi Cô Út</title>
-    <link rel="stylesheet" href="style.css?v=1.0">
+    <title>Đậu Hủ Thúi Cô Út - Chúc Mừng Năm Mới</title>
+    <link rel="stylesheet" href="style.css?v=1.1">
 </head>
 <body>
+    <!-- Hiệu ứng hoa mai rơi -->
+    <div id="tet-blossoms"></div>
+
+    <!-- Trang trí lồng đèn -->
+    <div class="lantern-container left">
+        <div class="lantern">🏮<span>Xuân</span></div>
+    </div>
+    <div class="lantern-container right">
+        <div class="lantern">🏮<span>An</span></div>
+    </div>
 
     <div class="header">
+        <div class="tet-badge">🧧 Chúc Mừng Năm Mới 🧧</div>
         <h1 class="logo">ĐẬU HỦ THÚI CÔ ÚT</h1>
         <p class="sub-logo">Món ăn đường phố - Hương vị khó quên</p>
     </div>
 
-    <div class="intro-container">
-        <h2>Hương Vị Truyền Thống Từ Tâm</h2>
-        <p class="intro-text">
-            Chào mừng bạn đến với <span class="highlight-text">Đậu Hủ Thúi Cô Út</span>, nơi gìn giữ nét ẩm thực đường phố độc đáo qua nhiều năm tháng. Với bí quyết <span class="highlight-text">ủ lên men tự nhiên</span> gia truyền, chúng tôi mang đến món đậu hủ không chỉ dừng lại ở mùi vị đặc trưng mà còn là sự hòa quyện giữa lớp vỏ <span class="highlight-text">giòn rụm</span> và phần nhân mềm mịn, béo ngậy.
-        </p>
-    </div>
-
-    <div class="filter-bar">
-        <button class="filter-btn active" onclick="filterMenu('dau-hu', this)">Đậu hủ</button>
-        <button class="filter-btn" onclick="filterMenu('do-uong', this)">Đồ uống</button>
-    </div>
-
     <div class="grid" id="menu-grid">
+        <!-- Đậu hủ thúi -->
         <div class="card dau-hu">
             <div class="price-tag">45K</div>
-            <img src="images/dau-hu-thui.jpg" alt="Đậu hủ thúi">
+            <img src="images/dau-hu-thui-150226.jpg.png" alt="Đậu hủ thúi" onerror="this.src='https://placehold.co/400x300?text=Dau+Hu+Thui'">
             <div class="card-info">
                 <h3>Đậu hủ thúi</h3>
                 <p>Đậu hủ chiên vàng giòn kèm nước sốt đặc trưng và đồ chua.</p>
                 <div class="quick-order">
                     <a href="https://shopeefood.vn/ho-chi-minh/dau-hu-thui-tra-sua-co-ut" target="_blank" class="btn-quick shopee">ShopeeFood</a>
                     <a href="https://grab.onelink.me/2695613898?pid=inappsharing&c=5-C6CZG6KTNLADBE&is_retargeting=true&af_dp=grab%3A%2F%2Fopen%3FscreenType%3DGRABFOOD%26sourceID%3DA4pcqCZkS4%26merchantIDs%3D5-C6CZG6KTNLADBE&af_force_deeplink=true&af_web_dp=https%3A%2F%2Fwww.grab.com%2Fdownload" target="_blank" class="btn-quick grab">GrabFood</a>
-                    <a href="javascript:void(0)" class="btn-quick phone btn-call-modal">Gọi ngay</a>
+                    <button class="btn-quick phone btn-call-modal">Gọi ngay</button>
                 </div>
-                <p class="opening-time-mini">Mở cửa: 15h30 - 21h (Thứ 2 -CN)</p>
+                <p class="opening-time-mini">Mở cửa: 15h30 - 21h (Thứ 2 - CN)</p>
             </div>
         </div>
 
+        <!-- Đậu hủ lông -->
         <div class="card dau-hu">
             <div class="price-tag">45K</div>
-            <img src="images/dau-hu-long.jpg" alt="Đậu hủ lông">
+            <img src="images/dau-hu-long-150226.jpg.png" alt="Đậu hủ lông" onerror="this.src='https://placehold.co/400x300?text=Dau+Hu+Long'">
             <div class="card-info">
                 <h3>Đậu hủ lông</h3>
-                <p>Vị béo ngậy đặc trưng, chiên giòn tan ăn kèm muối ớt Thiểm Tây cay nồng nàn .</p>
+                <p>Vị béo ngậy đặc trưng, chiên giòn tan ăn kèm muối ớt Thiểm Tây cay nồng nàn.</p>
                 <div class="quick-order">
                     <a href="https://shopeefood.vn/ho-chi-minh/dau-hu-thui-tra-sua-co-ut" target="_blank" class="btn-quick shopee">ShopeeFood</a>
                     <a href="https://grab.onelink.me/2695613898?pid=inappsharing&c=5-C6CZG6KTNLADBE&is_retargeting=true&af_dp=grab%3A%2F%2Fopen%3FscreenType%3DGRABFOOD%26sourceID%3DA4pcqCZkS4%26merchantIDs%3D5-C6CZG6KTNLADBE&af_force_deeplink=true&af_web_dp=https%3A%2F%2Fwww.grab.com%2Fdownload" target="_blank" class="btn-quick grab">GrabFood</a>
-                    <a href="javascript:void(0)" class="btn-quick phone btn-call-modal">Gọi ngay</a>
+                    <button class="btn-quick phone btn-call-modal">Gọi ngay</button>
                 </div>
-                <p class="opening-time-mini">Mở cửa: 15h30 - 21h (Thứ 2 -CN)</p>
+                <p class="opening-time-mini">Mở cửa: 15h30 - 21h (Thứ 2 - CN)</p>
             </div>
         </div>
 
+        <!-- Đậu hủ đen -->
+        <div class="card dau-hu">
+            <div class="price-tag">55K</div>
+            <img src="images/dau-hu-den.png" alt="Đậu hủ đen Trường Sa" onerror="this.src='https://placehold.co/400x300?text=Dau+Hu+Den'">
+            <div class="card-info">
+                <h3>Đậu hủ đen Trường Sa</h3>
+                <p>Đậu hủ đen vỏ giòn, mềm ruột, quyện cùng nước sốt Tứ Xuyên cay tê, thơm nồng củ cải ớt.</p>
+                <div class="quick-order">
+                    <a href="https://shopeefood.vn/ho-chi-minh/dau-hu-thui-tra-sua-co-ut" target="_blank" class="btn-quick shopee">ShopeeFood</a>
+                    <a href="https://grab.onelink.me/2695613898?pid=inappsharing&c=5-C6CZG6KTNLADBE&is_retargeting=true&af_dp=grab%3A%2F%2Fopen%3FscreenType%3DGRABFOOD%26sourceID%3DA4pcqCZkS4%26merchantIDs%3D5-C6CZG6KTNLADBE&af_force_deeplink=true&af_web_dp=https%3A%2F%2Fwww.grab.com%2Fdownload" target="_blank" class="btn-quick grab">GrabFood</a>
+                    <button class="btn-quick phone btn-call-modal">Gọi ngay</button>
+                </div>
+                <p class="opening-time-mini">Mở cửa: 15h30 - 21h (Thứ 2 - CN)</p>
+            </div>
+        </div>
+
+        <!-- Trà sữa -->
         <div class="card do-uong hidden">
             <div class="price-tag">20K</div>
-            <img src="images/tra-sua-r1.jpg" alt="Trà sữa Bin Bin">
+            <img src="images/tra-sua-r1.jpg" alt="Trà sữa Bin Bin" onerror="this.src='https://placehold.co/400x300?text=Tra+Sua'">
             <div class="card-info">
                 <h3>Trà sữa Bin Bin</h3>
                 <p>Vị trà sữa truyền thống thơm béo, đậm đà khó quên.</p>
                 <div class="quick-order">
                     <a href="https://shopeefood.vn/ho-chi-minh/dau-hu-thui-tra-sua-co-ut" target="_blank" class="btn-quick shopee">ShopeeFood</a>
                     <a href="https://grab.onelink.me/2695613898?pid=inappsharing&c=5-C6CZG6KTNLADBE&is_retargeting=true&af_dp=grab%3A%2F%2Fopen%3FscreenType%3DGRABFOOD%26sourceID%3DA4pcqCZkS4%26merchantIDs%3D5-C6CZG6KTNLADBE&af_force_deeplink=true&af_web_dp=https%3A%2F%2Fwww.grab.com%2Fdownload" target="_blank" class="btn-quick grab">GrabFood</a>
-                    <a href="javascript:void(0)" class="btn-quick phone btn-call-modal">Gọi ngay</a>
+                    <button class="btn-quick phone btn-call-modal">Gọi ngay</button>
                 </div>
-                <p class="opening-time-mini">Mở cửa: 15h30 - 21h (Thứ 2 -CN)</p>
+                <p class="opening-time-mini">Mở cửa: 15h30 - 21h (Thứ 2 - CN)</p>
             </div>
         </div>
 
+        <!-- Trà xoài -->
         <div class="card do-uong hidden">
             <div class="price-tag">25K</div>
-            <img src="images/tra-xoai-chanh-day.jpg" alt="Trà xoài chanh dây">
+            <img src="images/tra-xoai-chanh-day.jpg" alt="Trà xoài chanh dây" onerror="this.src='https://placehold.co/400x300?text=Tra+Xoai'">
             <div class="card-info">
                 <h3>Trà xoài chanh dây</h3>
                 <p>Vị chua ngọt bùng nổ, giải nhiệt cực tốt.</p>
                 <div class="quick-order">
                     <a href="https://shopeefood.vn/ho-chi-minh/dau-hu-thui-tra-sua-co-ut" target="_blank" class="btn-quick shopee">ShopeeFood</a>
                     <a href="https://grab.onelink.me/2695613898?pid=inappsharing&c=5-C6CZG6KTNLADBE&is_retargeting=true&af_dp=grab%3A%2F%2Fopen%3FscreenType%3DGRABFOOD%26sourceID%3DA4pcqCZkS4%26merchantIDs%3D5-C6CZG6KTNLADBE&af_force_deeplink=true&af_web_dp=https%3A%2F%2Fwww.grab.com%2Fdownload" target="_blank" class="btn-quick grab">GrabFood</a>
-                    <a href="javascript:void(0)" class="btn-quick phone btn-call-modal">Gọi ngay</a>
+                    <button class="btn-quick phone btn-call-modal">Gọi ngay</button>
                 </div>
-                <p class="opening-time-mini">Mở cửa: 15h30 - 21h (Thứ 2 -CN)</p>
+                <p class="opening-time-mini">Mở cửa: 15h30 - 21h (Thứ 2 - CN)</p>
             </div>
         </div>
     </div>
-
-    <div class="footer-info">
-        <h3>THÔNG TIN LIÊN HỆ</h3>
-        <p>📍 <strong>Địa chỉ:</strong> 438/42 Lê Hồng Phong, P.1, Q.10, TP.HCM</p>
-        <p>📞 <strong>Số điện thoại:</strong> <span style="color: var(--primary-orange); font-weight: bold;">0903 266 772 - 070 702 1719</span></p>
-        <p>⏰ <strong>Giờ mở cửa:</strong> 15h30 - 21h00 (Thứ 2 -CN)</p>
+    
+    <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterMenu('dau-hu', this)">🌼 Đậu hủ</button>
+        <button class="filter-btn" onclick="filterMenu('do-uong', this)">🍹 Đồ uống</button>
     </div>
+
+    <div class="intro-container">
+        <h2>🧧 Hương Vị Tết - Đậu Hủ Truyền Thống</h2>
+        <p class="intro-text">
+            Chào mừng bạn đến với <span class="highlight-text">Đậu Hủ Thúi Cô Út</span>, nơi gìn giữ nét ẩm thực đường phố độc đáo qua nhiều năm tháng. Với bí quyết <span class="highlight-text">ủ lên men tự nhiên</span> gia truyền, chúng tôi mang đến món đậu hủ không chỉ dừng lại ở mùi vị đặc trưng mà còn là sự hòa quyện giữa lớp vỏ <span class="highlight-text">giòn rụm</span> và phần nhân mềm mịn, béo ngậy.
+        </p>
+    </div>
+
+<div class="footer-info">
+    <h3>THÔNG TIN LIÊN HỆ</h3>
+    <p>📍 <strong>Địa chỉ:</strong> 438/42 Lê Hồng Phong, P.1, Q.10, TP.HCM</p>
+    <p>📞 <strong>Số điện thoại:</strong></p>
+    <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 5px;">
+        <a href="tel:0903266772" style="color: var(--primary-orange); font-weight: bold; text-decoration: none; font-size: 1.1rem;">
+            0903 266 772
+        </a>
+        <a href="tel:0707021719" style="color: var(--primary-orange); font-weight: bold; text-decoration: none; font-size: 1.1rem;">
+            070 702 1719
+        </a>
+    </div>
+    <p>⏰ <strong>Giờ mở cửa:</strong> 15h30 - 21h00 (Thứ 2 - CN)</p>
+    <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">🏮 Chúc quý khách năm mới Vạn Sự Như Ý! 🏮</p>
+</div>
 
     <div id="orderModal" class="modal">
         <div class="modal-content">
-            <h2>Liên hệ gọi món</h2>
+            <h2 style="color: #d0021b;">🧧 Liên hệ đặt hàng</h2>
             <p>Bấm vào số điện thoại để gọi trực tiếp:</p>
             <div style="margin: 20px 0; display: flex; flex-direction: column; gap: 12px;">
-                <a href="tel:0903266772" class="btn-delivery phone-call" style="font-size: 1.3rem; text-decoration: none;">0903 266 772</a>
-                <a href="tel:0707021719" class="btn-delivery phone-call" style="font-size: 1.3rem; text-decoration: none; background: #d97706;">070 702 1719</a>
+                <a href="tel:0903266772" class="btn-delivery phone-call" style="font-size: 1.3rem; text-decoration: none; background: #d0021b;">0903 266 772</a>
+                <a href="tel:0707021719" class="btn-delivery phone-call" style="font-size: 1.3rem; text-decoration: none; background: #f59e0b;">070 702 1719</a>
             </div>
             <button class="close-btn" id="closeModal">Để sau</button>
         </div>
     </div>
 
-    <script src="script.js?v=1.0"></script>
+    <script src="script.js?v=1.1"></script>
 </body>
 </html>
