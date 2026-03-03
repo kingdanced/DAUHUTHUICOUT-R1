@@ -19,7 +19,7 @@ body {
 .blossom { position: absolute; color: #ffd700; font-size: 20px; user-select: none; animation: fall linear forwards; }
 @keyframes fall { 0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0; } }
 
-.lantern-container { position: fixed; top: -10px; z-index: 100; pointer-events: none; }
+.lantern-container { position: fixed; top: -10px; z-index: 10000; pointer-events: none; }
 .lantern-container.left { left: 10px; }
 .lantern-container.right { right: 10px; }
 .lantern { font-size: 40px; display: flex; flex-direction: column; align-items: center; animation: sway 3s ease-in-out infinite alternate; transform-origin: top center; }
@@ -28,17 +28,123 @@ body {
 
 /* --- HEADER --- */
 .header { text-align: center; margin-bottom: 30px; }
+
 .logo { color: var(--tet-red) !important; font-weight: 800; font-size: 2.2rem; margin: 5px 0; text-transform: uppercase; text-shadow: 1px 1px 0px var(--tet-gold); }
 .sub-logo { font-size: 0.95rem; color: var(--text-brown); font-style: italic; }
 .tet-badge { background: var(--tet-red); color: white; display: inline-block; padding: 5px 20px; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 10px rgba(208, 2, 27, 0.2); }
 
-/* --- FILTER BAR --- */
-.filter-bar { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; position: sticky; top: 0; background: rgba(255, 253, 240, 0.9); padding: 15px 0; z-index: 10; backdrop-filter: blur(5px); }
-.filter-btn { padding: 10px 25px; border-radius: 25px; border: 2px solid var(--tet-gold); background: white; cursor: pointer; font-weight: bold; color: var(--text-brown); transition: 0.3s; }
-.filter-btn.active { background: var(--tet-red); color: white; border-color: var(--tet-red); }
+/* Định dạng Menu */
 
+/* Tổng thể thanh menu */
+/* --- CẤU HÌNH NAVBAR CỐ ĐỊNH VÀ CĂN GIỮA --- */
+.navbar {
+    background-color: var(--tet-red);
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 0;
+    z-index: 10001;
+    width: 100%;
+    padding: 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-bottom: 2px solid var(--tet-gold);
+   /* ... các thuộc tính khác giữ nguyên ... */
+    max-width: 1100px;
+    
+    /* Chỉnh số 30px tùy theo độ rộng bạn muốn (ví dụ 20px, 30px, 40px) */
+    margin: 10px auto 30px auto;
+    
+    border-radius: 50px;
+    border: 2px solid var(--tet-red);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center; /* Giữ chữ bắt đầu từ trái của khung cho chuyên nghiệp */
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0 30px; /* Tăng padding một chút để chữ không chạm mép cong */
+    height: 60px;
+    gap: 10px;
+}
+
+/* Các phần li, a và hiệu ứng giữ nguyên như cũ của bạn */
+.navbar li {
+    margin: 0 5px;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    display: block;
+}
+
+.navbar li.active a {
+    background-color: #fce791;
+    color: #b45309;
+    border-radius: 10px;
+    padding: 8px 15px;
+}
+
+.navbar li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 10px;
+}
+
+/* Fix lỗi body bị mất padding khi có menu cố định */
+body {
+    padding-top: 0 !important; /* Reset lại để không bị khoảng trắng lạ */
+}
+
+
+
+/* --- THANH LỌC MÓN ĂN (FILTER BAR) --- */
+
+
+/* Khung bao quanh các nút */
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px; /* Đẩy khoảng cách top như bạn muốn */
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+/* Định dạng chữ và kiểu dáng nút */
+.filter-btn {
+    background-color: #ffffff; /* Nền trắng để nổi bật chữ */
+    color: #c00000;            /* Màu đỏ đô giống thương hiệu của bạn */
+    border: 2px solid #c00000;
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    font-weight: 700;          /* Làm chữ đậm lên */
+    text-transform: uppercase; /* Viết hoa toàn bộ cho sang trọng */
+    letter-spacing: 1px;       /* Khoảng cách giữa các chữ cái */
+    border-radius: 50px;       /* Bo tròn kiểu viên thuốc */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Hiệu ứng mượt mà */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font chữ hiện đại */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho nút */
+}
+
+/* Hiệu ứng khi di chuột qua hoặc khi nút đang được chọn */
+.filter-btn:hover, .filter-btn.active {
+    background-color: #c00000;
+    color: #ffffff;
+    transform: translateY(-3px); /* Nút bay nhẹ lên khi hover */
+    box-shadow: 0 6px 12px rgba(192, 0, 0, 0.3);
+}
+
+.filter-btn.active { background: var(--tet-red); color: white; border-color: var(--tet-red); }
 /* --- GRID & CARDS --- */
-.grid { display: flex; flex-wrap: wrap; gap: 25px; max-width: 1200px; margin: 0 auto; justify-content: center; align-items: stretch; }
+.grid { display: flex; flex-wrap: wrap; gap: 25px; max-width: 1200px; margin-top: 30px;margin: 0 auto; justify-content: center; align-items: stretch; }
 .card { width: 320px; background: white; border-radius: 20px; overflow: hidden; position: relative; border: 3px solid var(--tet-gold); transition: all 0.3s ease; display: flex; flex-direction: column; box-shadow: 0 8px 15px rgba(0,0,0,0.05); }
 .card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(208, 2, 27, 0.15); border-color: var(--tet-red); }
 .card img { width: 100%; height: 220px; object-fit: cover; display: block; }

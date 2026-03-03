@@ -10,6 +10,8 @@
 
 </head>
 <body>
+
+    
     <!-- Hiệu ứng hoa mai rơi -->
     <div id="tet-blossoms"></div>
 
@@ -27,8 +29,11 @@
         <p class="sub-logo">Món ăn đường phố - Hương vị khó quên</p>
     </div>
 
+<nav class="navbar"></nav>
+    
+
 <div class="filter-bar">
-    <button class="filter-btn active" onclick="filterMenu('all', this)">🧧 Tất cả</button>
+    <button class="filter-btn" onclick="filterMenu('all', this)">🧧 Tất cả</button>
     <button class="filter-btn" onclick="filterMenu('dau-hu', this)">🌼 Đậu hủ</button>
     <button class="filter-btn" onclick="filterMenu('do-uong', this)">🍹 Đồ uống</button>
 </div>
@@ -45,7 +50,7 @@
                 <div class="quick-order">
                     <a href="https://shopeefood.vn/ho-chi-minh/dau-hu-thui-tra-sua-co-ut" target="_blank" class="btn-quick shopee">ShopeeFood</a>
                     <a href="https://grab.onelink.me/2695613898?pid=inappsharing&c=5-C6CZG6KTNLADBE&is_retargeting=true&af_dp=grab%3A%2F%2Fopen%3FscreenType%3DGRABFOOD%26sourceID%3DA4pcqCZkS4%26merchantIDs%3D5-C6CZG6KTNLADBE&af_force_deeplink=true&af_web_dp=https%3A%2F%2Fwww.grab.com%2Fdownload" target="_blank" class="btn-quick grab">GrabFood</a>
-                    <button class="btn-quick phone btn-call-modal">Gọi ngay</button>
+                    <button class="btn-quick phone" onclick="handleCallRequest()">Gọi ngay</button>
                 </div>
                 <p class="opening-time-mini">Mở cửa: 15h30 - 21h (Thứ 2 - CN)</p>
             </div>
@@ -61,7 +66,7 @@
                 <div class="quick-order">
                     <a href="https://shopeefood.vn/ho-chi-minh/dau-hu-thui-tra-sua-co-ut" target="_blank" class="btn-quick shopee">ShopeeFood</a>
                     <a href="https://grab.onelink.me/2695613898?pid=inappsharing&c=5-C6CZG6KTNLADBE&is_retargeting=true&af_dp=grab%3A%2F%2Fopen%3FscreenType%3DGRABFOOD%26sourceID%3DA4pcqCZkS4%26merchantIDs%3D5-C6CZG6KTNLADBE&af_force_deeplink=true&af_web_dp=https%3A%2F%2Fwww.grab.com%2Fdownload" target="_blank" class="btn-quick grab">GrabFood</a>
-                    <button class="btn-quick phone btn-call-modal">Gọi ngay</button>
+                    <button class="btn-quick phone" onclick="handleCallRequest()">Gọi ngay</button>
                 </div>
                 <p class="opening-time-mini">Mở cửa: 15h30 - 21h (Thứ 2 - CN)</p>
             </div>
@@ -77,12 +82,13 @@
                 <div class="quick-order">
                     <a href="https://shopeefood.vn/ho-chi-minh/dau-hu-thui-tra-sua-co-ut" target="_blank" class="btn-quick shopee">ShopeeFood</a>
                     <a href="https://grab.onelink.me/2695613898?pid=inappsharing&c=5-C6CZG6KTNLADBE&is_retargeting=true&af_dp=grab%3A%2F%2Fopen%3FscreenType%3DGRABFOOD%26sourceID%3DA4pcqCZkS4%26merchantIDs%3D5-C6CZG6KTNLADBE&af_force_deeplink=true&af_web_dp=https%3A%2F%2Fwww.grab.com%2Fdownload" target="_blank" class="btn-quick grab">GrabFood</a>
-                    <button class="btn-quick phone btn-call-modal">Gọi ngay</button>
+                    <button class="btn-quick phone" onclick="handleCallRequest()">Gọi ngay</button>
                 </div>
                 <p class="opening-time-mini">Mở cửa: 15h30 - 21h (Thứ 2 - CN)</p>
             </div>
         </div>
 
+        
         <!-- Trà sữa -->
         <div class="card do-uong hidden">
             <div class="price-tag">20K</div>
@@ -93,7 +99,7 @@
                 <div class="quick-order">
                     <a href="https://shopeefood.vn/ho-chi-minh/dau-hu-thui-tra-sua-co-ut" target="_blank" class="btn-quick shopee">ShopeeFood</a>
                     <a href="https://grab.onelink.me/2695613898?pid=inappsharing&c=5-C6CZG6KTNLADBE&is_retargeting=true&af_dp=grab%3A%2F%2Fopen%3FscreenType%3DGRABFOOD%26sourceID%3DA4pcqCZkS4%26merchantIDs%3D5-C6CZG6KTNLADBE&af_force_deeplink=true&af_web_dp=https%3A%2F%2Fwww.grab.com%2Fdownload" target="_blank" class="btn-quick grab">GrabFood</a>
-                    <button class="btn-quick phone btn-call-modal">Gọi ngay</button>
+                    <button class="btn-quick phone" onclick="handleCallRequest()">Gọi ngay</button>
                 </div>
                 <p class="opening-time-mini">Mở cửa: 15h30 - 21h (Thứ 2 - CN)</p>
             </div>
@@ -109,7 +115,7 @@
                 <div class="quick-order">
                     <a href="https://shopeefood.vn/ho-chi-minh/dau-hu-thui-tra-sua-co-ut" target="_blank" class="btn-quick shopee">ShopeeFood</a>
                     <a href="https://grab.onelink.me/2695613898?pid=inappsharing&c=5-C6CZG6KTNLADBE&is_retargeting=true&af_dp=grab%3A%2F%2Fopen%3FscreenType%3DGRABFOOD%26sourceID%3DA4pcqCZkS4%26merchantIDs%3D5-C6CZG6KTNLADBE&af_force_deeplink=true&af_web_dp=https%3A%2F%2Fwww.grab.com%2Fdownload" target="_blank" class="btn-quick grab">GrabFood</a>
-                    <button class="btn-quick phone btn-call-modal">Gọi ngay</button>
+                    <button class="btn-quick phone" onclick="handleCallRequest()">Gọi ngay</button>
                 </div>
                 <p class="opening-time-mini">Mở cửa: 15h30 - 21h (Thứ 2 - CN)</p>
             </div>
@@ -146,12 +152,15 @@
     <p>📍 <strong>Địa chỉ:</strong> 438/42 Lê Hồng Phong, P.1, Q.10, TP.HCM</p>
     
    <p style="margin-bottom: 15px;">📞 <strong>Số điện thoại:</strong></p>
+
     
     <div style="display: flex; flex-direction: column; gap: 15px; max-width: 280px; margin: 0 auto 20px auto;">
-        <a href="tel:0903266772" class="btn-quick phone" style="text-decoration: none; height: 45px; font-size: 1.2rem; padding: 10px 60px;">
+        <a href="tel:0903266772" class="btn-quick phone" style="text-decoration: none; 
+        height: 45px; font-size: 1.2rem; padding: 10px 60px;">
             📞 0903 266 772
         </a>
-        <a href="tel:0707021719" class="btn-quick phone" style="text-decoration: none; height: 45px; font-size: 1.2rem; padding: 10px 60px; background: #d7ba1f;">
+        <a href="tel:0707021719" class="btn-quick phone" style="text-decoration: none;
+         height: 45px; font-size: 1.2rem; padding: 10px 60px; background: #f6d518;">
             📞 070 702 1719
         </a>
     </div>
@@ -181,10 +190,9 @@
         </div>
     </div>
 
-    <script src="script.js?v=1.1"></script>
+    
 </body>
 
 </html>
-
 
 

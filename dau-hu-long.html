@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đậu Hủ Thúi Cô Út - Chúc Mừng Năm Mới</title>
+    <link rel="stylesheet" href="style.css?v=1.1">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="style.css?v=1.2">
+
+</head>
+<body>
+
+    <div id="tet-blossoms"></div>
+
+    <div class="lantern-container left">
+        <div class="lantern">🏮<span>An Khang </span></div>
+    </div>
+    <div class="lantern-container right">
+        <div class="lantern">🏮<span> Thịnh Vượng </span></div>
+    </div>
+
+    <div class="header">
+        <div class="tet-badge">🧧 Chúc Mừng Năm Mới 🧧</div>
+        <h1 class="logo">ĐẬU HỦ THÚI CÔ ÚT</h1>
+        <p class="sub-logo">Vị béo ngậy - Muối ớt Thiểm Tây cay nồng</p>
+    </div>
+
+ <nav class="navbar"></nav>
+
+
+    <div class="grid" id="menu-grid">
+        <div class="card" style="width: 100%; max-width: 800px;">
+            <div class="price-tag">45K</div>
+            <img src="images/dau-hu-long-150226.jpg.png" alt="Đậu hủ lông" onerror="this.src='https://placehold.co/800x400?text=Dau+Hu+Long+Special'">
+            <div class="card-info">
+                <h2>Đặc sản Đậu Hủ Long (Đậu Hủ Lông)</h2>
+                <p>Đây là món ăn độc đáo với lớp màng men vi sinh trắng như bông (lông) bao phủ bề mặt đậu trước khi chế biến. Khi chiên lên, đậu tạo nên một kết cấu cực kỳ lạ miệng:</p>
+                <ul style="text-align: left; color: var(--text-brown); line-height: 1.8;">
+                    <li>✨ <strong>Vỏ ngoài:</strong> Giòn tan, vàng óng ánh.</li>
+                    <li>✨ <strong>Bên trong:</strong> Mềm mịn, béo ngậy như tan trong miệng.</li>
+                    <li>✨ <strong>Gia vị:</strong> Ăn kèm muối ớt Thiểm Tây được pha trộn theo công thức riêng, tạo độ cay nồng kích thích vị giác.</li>
+                </ul>
+                
+                <div class="quick-order">
+                    <a href="https://shopeefood.vn/ho-chi-minh/dau-hu-thui-tra-sua-co-ut" target="_blank" class="btn-quick shopee">Đặt ShopeeFood</a>
+                    <a href="https://grab.onelink.me/2695613898?..." target="_blank" class="btn-quick grab">Đặt GrabFood</a>
+                    <button class="btn-quick phone btn-call-modal">Gọi giao hàng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="intro-container">
+        <h2>🧧 Tại sao nên thử Đậu Hủ Long?</h2>
+        <p class="intro-text">
+            Khác với đậu hủ thông thường, <span class="highlight-text">Đậu Hủ Long</span> tại tiệm Cô Út được tuyển chọn kỹ lưỡng và ủ men theo quy trình nghiêm ngặt để đảm bảo độ tươi ngon và an toàn. Đây là món "best-seller" dành cho những tín đồ yêu thích sự béo ngậy và cay nồng.
+        </p>
+    </div>
+<div class="footer-info">
+<h3>THÔNG TIN LIÊN HỆ</h3>
+    <p>📍 <strong>Địa chỉ:</strong> 438/42 Lê Hồng Phong, P.1, Q.10, TP.HCM</p>
+    
+   <p style="margin-bottom: 15px;">📞 <strong>Số điện thoại:</strong></p>
+    
+    <div style="display: flex; flex-direction: column; gap: 15px; max-width: 280px; margin: 0 auto 20px auto;">
+        <a href="tel:0903266772" class="btn-quick phone" style="text-decoration: none; height: 45px; font-size: 1.2rem; padding: 10px 60px;">
+            📞 0903 266 772
+        </a>
+        <a href="tel:0707021719" class="btn-quick phone" style="text-decoration: none; height: 45px; font-size: 1.2rem; padding: 10px 60px; background: #d7ba1f;">
+            📞 070 702 1719
+        </a>
+    </div>
+
+    <p>⏰ <strong>Giờ mở cửa:</strong> 15h30 - 21h00 (Thứ 2 - CN)</p>
+
+    <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">🏮 Chúc quý khách năm mới Vạn Sự Như Ý! 🏮</p>
+   
+<p style="font-size: 0.8rem; color: var(--text-brown); margin-top: 5px;">
+    🟢 <span id="online-count" style="font-weight: bold; color: #00b14f;">1</span> khách đang xem menu
+</p>
+
+<p style="margin-top: 10px; font-size: 0.8rem; color: var(--text-brown);">
+    👀 Đã có <span id="view-count" style="font-weight: bold; color: var(--tet-red);">0</span> lượt ghé thăm tiệm
+</p>
+</div>
+
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <h2 style="color: #d0021b;">🧧 Liên hệ đặt hàng</h2>
+            <p>Bấm vào số điện thoại để gọi trực tiếp:</p>
+            <div style="margin: 20px 0; display: flex; flex-direction: column; gap: 12px;">
+                <a href="tel:0903266772" class="btn-delivery phone-call" style="font-size: 1.3rem; text-decoration: none; background: #d0021b;">0903 266 772</a>
+                <a href="tel:0707021719" class="btn-delivery phone-call" style="font-size: 1.3rem; text-decoration: none; background: #f59e0b;">070 702 1719</a>
+            </div>
+            <button class="close-btn" id="closeModal">Để sau</button>
+        </div>
+    </div>
+
+<script src="script.js?v=1.2"></script>
+</body>
+</html>
