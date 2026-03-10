@@ -346,8 +346,13 @@ body {
 /* ==========================================================================
    9. FOOTER & ĐIỀU CHỈNH MOBILE (RESPONSIVE)
    ========================================================================== */
-.intro-container, .footer-info { 
-    max-width: 1100px; margin: 30px auto; background: white; padding: 5px; 
+.intro-container{ 
+    max-width: 900px; margin: 30px auto; background: white; padding: 5px; 
+    border-radius: 20px; text-align: center; border: 2px solid var(--tet-gold); 
+}
+
+.footer-info { 
+    max-width: 900px; margin: 30px auto; background: white; padding: 5px; 
     border-radius: 20px; text-align: center; border: 2px solid var(--tet-gold); 
 }
 
@@ -360,4 +365,5 @@ body {
 
 @media (min-width: 1024px) {
     .navbar ul { justify-content: center; }
+
 }
