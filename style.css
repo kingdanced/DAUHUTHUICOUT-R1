@@ -352,7 +352,7 @@ body {
 }
 
 .footer-info { 
-    max-width: 900px; margin: 30px auto; background: white; padding: 5px; 
+    max-width: 600px; margin: 30px auto; background: white; padding: 5px; 
     border-radius: 20px; text-align: center; border: 2px solid var(--tet-gold); 
 }
 
@@ -367,3 +367,4 @@ body {
     .navbar ul { justify-content: center; }
 
 }
+
